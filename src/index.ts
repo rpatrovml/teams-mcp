@@ -14,6 +14,7 @@ import { cachePlugin } from "./msal-cache.js";
 import { FULL_SCOPES, GraphService, READ_ONLY_SCOPES } from "./services/graph.js";
 import { registerAuthTools } from "./tools/auth.js";
 import { registerChatTools } from "./tools/chats.js";
+import { registerMailTools } from "./tools/mail.js";
 import { registerSearchTools } from "./tools/search.js";
 import { registerTeamsTools } from "./tools/teams.js";
 import { registerUsersTools } from "./tools/users.js";
@@ -223,6 +224,7 @@ async function startMcpServer(readOnly: boolean) {
   registerUsersTools(server, graphService, readOnly);
   registerTeamsTools(server, graphService, readOnly);
   registerChatTools(server, graphService, readOnly);
+  registerMailTools(server, graphService, readOnly);
   registerSearchTools(server, graphService, readOnly);
 
   // Start server

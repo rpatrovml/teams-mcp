@@ -12,6 +12,7 @@ export const READ_ONLY_SCOPES = [
   "Channel.ReadBasic.All",
   "Group.Read.All",
   "GroupMember.Read.All",
+  "Mail.Read",
 ];
 
 /** Full scopes including write operations. */
