@@ -8,21 +8,18 @@ const AUTHORITY = "https://login.microsoftonline.com/common";
 /** Scopes sufficient for read-only operations (no message sending, no file uploads). */
 export const READ_ONLY_SCOPES = [
   "User.Read",
-  "User.ReadBasic.All",
   "Team.ReadBasic.All",
   "Channel.ReadBasic.All",
-  "ChannelMessage.Read.All",
-  "TeamMember.Read.All",
-  "Chat.Read",
+  "Group.Read.All",
+  "GroupMember.Read.All",
 ];
 
 /** Full scopes including write operations. */
 export const FULL_SCOPES = [
   ...READ_ONLY_SCOPES,
-  "ChannelMessage.Send",
-  "ChannelMessage.ReadWrite",
   "Chat.ReadWrite",
   "Files.ReadWrite.All",
+  "User.ReadWrite.All",
 ];
 
 export interface AuthStatus {
