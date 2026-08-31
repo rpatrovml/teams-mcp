@@ -9,7 +9,11 @@ import type {
   ChatMessageReaction,
   ChatType,
   ConversationMember,
+  Importance,
+  MailFolder,
+  Message,
   NullableOption,
+  Recipient,
   Team,
   TeamSpecialization,
   TeamsAppInstallation,
@@ -29,7 +33,11 @@ export type {
   ChatMessageReaction,
   ChatType,
   ConversationMember,
+  Importance,
+  MailFolder,
+  Message,
   NullableOption,
+  Recipient,
   Team,
   TeamSpecialization,
   TeamsAppInstallation,
@@ -187,4 +195,37 @@ export interface SearchHit {
       channelId?: string;
     };
   };
+}
+
+// Simplified types for mail responses
+export interface MailMessageSummary {
+  id?: string | undefined;
+  subject?: NullableOption<string> | undefined;
+  from?: NullableOption<string> | undefined;
+  receivedDateTime?: NullableOption<string> | undefined;
+  bodyPreview?: NullableOption<string> | undefined;
+  isRead?: NullableOption<boolean> | undefined;
+  hasAttachments?: NullableOption<boolean> | undefined;
+  importance?: NullableOption<Importance> | undefined;
+  webLink?: NullableOption<string> | undefined;
+}
+
+export interface MailMessageDetail {
+  id?: string | undefined;
+  subject?: NullableOption<string> | undefined;
+  from?: NullableOption<string> | undefined;
+  toRecipients?: string[] | undefined;
+  receivedDateTime?: NullableOption<string> | undefined;
+  importance?: NullableOption<Importance> | undefined;
+  hasAttachments?: NullableOption<boolean> | undefined;
+  body?: NullableOption<string> | undefined;
+  webLink?: NullableOption<string> | undefined;
+}
+
+export interface MailFolderSummary {
+  id?: string | undefined;
+  displayName?: NullableOption<string> | undefined;
+  unreadItemCount?: NullableOption<number> | undefined;
+  totalItemCount?: NullableOption<number> | undefined;
+  childFolderCount?: NullableOption<number> | undefined;
 }

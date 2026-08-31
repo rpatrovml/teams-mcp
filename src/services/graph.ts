@@ -14,6 +14,7 @@ export const READ_ONLY_SCOPES = [
   "ChannelMessage.Read.All",
   "TeamMember.Read.All",
   "Chat.Read",
+  "Mail.Read",
 ];
 
 /** Full scopes including write operations. */
